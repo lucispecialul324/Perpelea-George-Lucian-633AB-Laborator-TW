@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Program Excursie Montană</title>
+    <style type="text/css">
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #e1dfbc;
+        }
+
+        /* 1. Titlul centrat */
+        h1 {
+            text-align: center;
+            color: rgb(167, 162, 27);
+            margin-bottom: 20px;
+        }
+
+        /* Container pentru centrare imagine */
+        .centrare-element {
+            text-align: center;
+        }
+
+        /* 2. Imaginea sa fie centrata, cu colturi rotunjite si umbra discreta */
+        .imagine-excursie {
+            display: block; /* pentru centrare cu margin: auto */
+            margin: 0 auto 20px auto;
+            width: 600px;
+            height: 400px;  
+            object-fit: cover;
+
+            /* Colturi rotunjite */           
+            border-radius: 20px;
+
+            /* Umbra discreta*/
+            box-shadow: 0 4px 8px rgba(193, 21, 21, 0.2);
+            border: 1px solid #ccc;
+        }
+
+        /* Stilizarea tabelului */
+        table {
+            width: 80%;
+            margin: 20px auto; /* Centrare tabel folosind Margin*/
+            border-collapse: collapse;
+        }
+
+        /* 3. Tabelul sa aiba borduri vizibile */
+        table, th, td {
+            border: 1px solid #333;
+            padding: 10px; /* Distanta dintre border şi continut */
+            text-align: left;
+        }
+
+        /* 4. Antetul tabelului (<th>) sa aiba fundal diferit */
+        th {
+            background-color: darkgreen;
+            color: white;
+        }
+
+        /* 5. Tabelul sa aibaculori alternative pe randuri */
+        /* Folosim selectorul de tag simplu 'tr' cu pseudo-clase */
+        tbody tr:nth-child(odd) {
+            background-color: #e6f3e6;
+        }
+        tbody tr:nth-child(even) {
+            background-color: white;
+        }
+
+        /* 6. La trecerea cu mouse-ul peste un rand, fundalul sa se schimbe */
+        tbody tr:hover {
+            background-color: #c9e6c9;
+            cursor: pointer;
+        }
+
+        .centrare-text-mic {
+            font-size: 0.9em;
+            color: #666;
+            text-align: center;
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Programul excursiei la munte</h1>
+
+    <div class="centrare-element">
+        <img src="Background munte.png" alt="Imagine reprezentativă pentru munte" class="imagine-excursie">
+    </div>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Ziua</th>
+                <th>Activitate principala</th>
+                <th>Locatie</th>
+                <th>Durata (ore)</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>Drumetie spre cabana</td>
+                <td>Valea Cerbului</td>
+                <td>4 ore</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Vizita la lacul glaciar</td>
+                <td>Lacul Balea</td>
+                <td>5 ore</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>Relaxare și picnic</td>
+                <td>Poiana Stanii</td>
+                <td>3 ore</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <p class="centrare-text-mic">
+        Excursia are scopul de a oferi o experiență montana relaxanta si educativa în mijlocul naturii.
+    </p>
+
+</body>
+</html>
