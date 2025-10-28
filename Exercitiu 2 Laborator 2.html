@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Formular Înregistrare Animale</title>
+    <style type="text/css">
+        /* Stilizare generala*/
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f7e6e6;
+            padding: 20px;
+        }
+
+        /* Stilizarea containerului formularului*/
+        .form-container {
+            /* 1. Formularul sa fie centrat pe pagina */
+            width: 400px;
+            margin: 40px auto; /* Centrare orizontala cu Margin*/
+            
+            /* 2. Fundal alb și umbra ușoara */
+            background-color: white; 
+            padding: 20px; /* Padding interior pentru conținut*/
+            border-radius: 8px; 
+            /* Umbra usoara */
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); 
+        }
+
+        /* Stilizarea titlului */
+        h1 {
+            color: #ff6a00;
+            text-align: center;
+        }
+
+        /* Stilizarea campurilor (input, select, textarea) */
+        input[type="text"], 
+        input[type="tel"], 
+        select, 
+        textarea {
+            width: 100%; /* Latime completa */
+            box-sizing: border-box; /* Asigura ca padding-ul și border-ul sunt incluse în latime */
+            
+            /* 3. Câmpurile sa aibă margin și padding consistente */
+            padding: 10px; 
+            margin: 5px 0 15px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        /* 4. Campurile sa isi schimbe culoarea bordurii când sunt selectate (focus) */
+        input:focus, 
+        select:focus, 
+        textarea:focus {
+            border: 2px solid #ff6a00; /* Bordură mai vizibila la focus */
+            outline: none; /* Elimina outline-ul implicit al browser-ului */
+        }
+        
+        /* Stilizarea etichetelor radio/checkbox si a titlurilor de sectiuni */
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        .section-title {
+            color: #ff6a00;
+            margin-top: 15px;
+            margin-bottom: 10px;
+            font-size: 1.1em;
+        }
+        .radio-group label, .checkbox-group label {
+            font-weight: normal;
+            display: inline-block;
+            margin-right: 15px;
+        }
+
+
+        /* Stilizarea Butoanelor */
+        .button-group {
+            text-align: right; /* Alinierea butoanelor la dreapta */
+            margin-top: 20px;
+        }
+
+        button {
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+        .submit-button {
+            background-color: #ff6a00;
+            color: white;
+            margin-right: 10px;
+        }
+        /* 6. Butonul de Trimitere să aibă efect de hover */
+        .submit-button:hover {
+            background-color: #cc5400;
+        }
+
+        .reset-button {
+            background-color: #888;
+            color: white;
+        }
+        /* 8. Butonul de Resetare să aibă efect de hover */
+        .reset-button:hover {
+            background-color: #666; /* Culoare mai închisă la hover */
+        }
+    </style>
+</head>
+<body>
+
+    <div class="form-container">
+        <h1>Formular de inregistrare animale</h1>
+
+        <p>Completati formularul de mai jos pentru a înregistra animalul dumneavoastra la clinica veterinara.</p>
+
+        <form action="#" method="post">
+            <label for="nume-stapan">Nume stapan:</label>
+            <input type="text" id="nume-stapan" name="nume-stapan" required>
+
+            <label for="telefon">Telefon:</label>
+            <input type="text" id="telefon" name="telefon" required>
+
+            <label for="nume-animal">Nume animal:</label>
+            <input type="text" id="nume-animal" name="nume-animal" required>
+
+            <label for="specie">Specie:</label>
+            <select id="specie" name="specie">
+                <option value="caine">Caine</option>
+                <option value="pisica">Pisica</option>
+                <option value="iepure">Rozatoare</option>
+                <option value="altul">Altul</option>
+            </select>
+            
+            <p class="section-title">Sexul animalului:</p>
+            <div class="radio-group">
+                <label><input type="radio" name="sex" value="mascul" checked> Mascul</label>
+                <label><input type="radio" name="sex" value="femela"> Femela</label>
+            </div>
+
+            <p class="section-title">Servicii dorite:</p>
+            <div class="checkbox-group">
+                <label><input type="checkbox" name="servicii" value="vaccinare"> Vaccinare</label>
+                <label><input type="checkbox" name="servicii" value="deparazitare"> Deparazitare</label>
+                <label><input type="checkbox" name="servicii" value="consult"> Consult</label>
+            </div>
+
+            <label for="observatii" style="margin-top: 15px;">Observatii:</label>
+            <textarea id="observatii" name="observatii" rows="4"></textarea>
+
+            <div class="button-group">
+                <button type="submit" class="submit-button">Trimite</button>
+                <button type="reset" class="reset-button">Reseteaza</button>
+            </div>
+        </form>
+    </div>
+
+</body>
+</html>
