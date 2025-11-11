@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Exercițiul 3 - JavaScript</title>
+    <script>
+        var n1 = 25;
+        var n2 = 14;
+        var n3 = 32;
+
+        console.log("Numerele inițiale: " + n1 + ", " + n2 + ", " + n3);
+
+        var max, mid, min;
+
+        if (n1 >= n2 && n1 >= n3) {
+            max = n1;
+            if (n2 >= n3) {
+                mid = n2;
+                min = n3;
+            } else {
+                mid = n3;
+                min = n2;
+            }
+        } else if (n2 >= n1 && n2 >= n3) {
+            max = n2;
+            if (n1 >= n3) {
+                mid = n1;
+                min = n3;
+            } else {
+                mid = n3;
+                min = n1;
+            }
+        } else {
+            max = n3;
+            if (n1 >= n2) {
+                mid = n1;
+                min = n2;
+            } else {
+                mid = n2;
+                min = n1;
+            }
+        }
+
+        console.log("Ordinea descrescătoare: " + max + ", " + mid + ", " + min);
+    </script>
+</head>
+<body>
+    <h1>Exercițiul 3</h1>
+    <p>Verificați consola browser-ului pentru rezultate.</p>
+</body>
+</html>

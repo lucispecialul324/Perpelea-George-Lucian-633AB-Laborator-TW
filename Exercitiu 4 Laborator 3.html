@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Exercițiul 4 - JavaScript</title>
+    <script>
+        var A = 14;
+        var B = 17;
+        var C = 13;
+        var D = 17;
+
+        console.log(`Laturile date sunt: ${A}, ${B}, ${C}, ${D}`);
+
+        /*
+        (A == C ȘI B == D) SAU (A == B ȘI C == D) SAU (A == D ȘI B == C)
+        */
+        var poateFiDreptunghi = false;
+        var L, l; 
+
+        var laturi = [A,B,C,D].sort(); 
+        if (laturi[0] === laturi[1] && laturi[2] === laturi[3]) {
+            poateFiDreptunghi = true;
+            L = laturi[3];
+            l = laturi[0];
+        }
+
+        if (poateFiDreptunghi) {
+            var perimetru = 2 * (L + l);
+            var aria = L * l;
+
+            console.log("Cele 4 numere pot reprezenta laturi ale unui dreptunghi!"); 
+            console.log("Perimetrul este: " + perimetru + ".");
+            console.log("Aria este: " + aria + "."); 
+        } else {
+            console.log("Cele 4 numere nu pot reprezenta laturi ale unui dreptunghi!");
+        }
+    </script>
+</head>
+<body>
+    <h1>Exercițiul 4</h1>
+    <p>Verificați consola browser-ului pentru rezultate.</p>
+</body>
+</html>
