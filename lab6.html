@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Catalog Studenti</title>
+</head>
+<body>
+    <h2>Adauga Student</h2>
+    <form id="formStudent">
+        <input type="text" id="nume" placeholder="Nume" required> 
+        <input type="number" id="anul" min="1" max="4" placeholder="An (1-4)" required> 
+        <input type="number" step="1" id="media" placeholder="Media" required> 
+        <button type="submit">Adauga</button>
+    </form>
+
+    <h2>Lista Studenti</h2>
+    <ul id="listaStudenti"></ul> 
+
+    <script>
+        // Funcție pentru a încărca lista (GET)
+        async function incarcaStudenti() {
+            const res = await fetch('api.php'); 
+            const studenti = await res.json();
+            const lista = document.getElementById('listaStudenti');
+            lista.innerHTML = '';
+            
+            studenti.forEach(s => {
+                lista.innerHTML += `<li>${s.nume} - Anul ${s.anul} - Media: ${s.media}</li>`;
+            });
+        }
+
+        // Trimiterea formularului (POST) fără refresh
+        document.getElementById('formStudent').addEventListener('submit', async (e) => {
+            e.preventDefault(); 
+            
+            const dateStudent = {
+                nume: document.getElementById('nume').value,
+                anul: document.getElementById('anul').value,
+                media: document.getElementById('media').value
+            };
+
+            const res = await fetch('api.php', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(dateStudent)
+            });
+
+            const rezultat = await res.json();
+            if (rezultat.success) {
+                incarcaStudenti(); // Actualizare în timp real
+                e.target.reset();
+            }
+        });
+
+        // Încărcare inițială
+        incarcaStudenti();
+    </script>
+</body>
+</html>
